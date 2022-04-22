@@ -1,29 +1,19 @@
 name: Whitesource Unified Agent Scan - .NET (dotnet)
 
-on:
-  push:
-    branches: [ main ]
-  pull_request:
-    branches: [ develop ]
-
+on: [push, pull_request, workflow_dispatch]
 
 jobs:
 
   build:
      
     runs-on: ubuntu-latest
-
     steps:
     - uses: actions/checkout@v2
-
     - name: Setup .NET
       uses: actions/setup-dotnet@v1
       with:
-        dotnet-version: 3.0.x
+        dotnet-version: '6.0.x'
         include-prerelease: true
-
-    - name: Restore dependencies
-      run: dotnet restore
 
     - name: Build with dotnet
       run: dotnet build ./eShopOnWeb.sln --configuration Release
