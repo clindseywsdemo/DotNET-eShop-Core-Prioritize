@@ -38,7 +38,3 @@ jobs:
         curl -LJO https://raw.githubusercontent.com/whitesource-ft/xModuleAnalyzer-NET/main/xModuleAnalyzer-NET.sh
         echo xModuleAnalyzer-NET downloaded successfully
         chmod +x ./xModuleAnalyzer-NET.sh && ./xModuleAnalyzer-NET.sh
-        
-      #Run the prioritize cleanup script
-    - name: Prioritize Cleanup
-      run: sh ./prioritize-ignore.sh
